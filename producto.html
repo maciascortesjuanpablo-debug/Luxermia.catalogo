@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambre Nocturne — LuxeViaAromas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/producto.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="home.html" class="brand">
+    <div class="seal"><span>LV</span></div>
+    <div class="brand-name"><span class="full">LUXEVIA AROMAS</span><span class="sub">MAISON DE PARFUM</span></div>
+  </a>
+  <div class="topbar-actions">
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar perfume...">
+    </div>
+    <a href="/home.html" class="back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al catálogo
+    </a>
+  </div>
+</div>
+
+<div class="crumb">Catálogo <span>/</span> Hombre <span>/</span> <span style="color:var(--gold);">Ambre Nocturne</span></div>
+
+<div class="product">
+  <div class="media-wrap">
+    <div class="blob">
+      <div class="badge">En stock</div>
+      <svg width="190" height="330" viewBox="0 0 180 320">
+        <defs>
+          <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8d6a0"/><stop offset="55%" stop-color="#c6a15b"/><stop offset="100%" stop-color="#8a7143"/>
+          </linearGradient>
+        </defs>
+        <rect x="72" y="18" width="36" height="28" rx="6" fill="url(#bg2)"/>
+        <rect x="80" y="4" width="20" height="20" rx="4" fill="#e8d6a0"/>
+        <rect x="40" y="56" width="100" height="230" rx="30" fill="url(#bg2)"/>
+        <text x="90" y="160" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2">AMBRE</text>
+        <text x="90" y="178" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2">NOCTURNE</text>
+        <text x="90" y="196" text-anchor="middle" font-family="Jost, sans-serif" font-size="7" fill="#c6a15b" letter-spacing="3">LUXEVIA AROMAS</text>
+      </svg>
+    </div>
+    <div class="dots"><span class="active"></span><span></span><span></span></div>
+  </div>
+
+  <div>
+    <div class="badge-row">
+      <span class="gender-badge">Hombre</span>
+      <span class="fam">Amaderado especiado</span>
+    </div>
+    <h1>Ambre Nocturne</h1>
+    <div class="maison">Eau de Parfum · 100 ml</div>
+
+    <div class="price-row">
+      <span class="stock">● En stock</span>
+    </div>
+
+    <p class="desc">Una fragancia envolvente que abre con especias cálidas y desciende hacia un corazón de cedro y ámbar gris, cerrando con un fondo profundo de vainilla y tabaco.</p>
+
+    <div class="notes-block">
+      <div class="notes-title">Pirámide olfativa</div>
+      <div class="note-group">
+        <div class="note-tag-label">Salida</div>
+        <div class="note-tags"><span class="note-tag">Bergamota</span><span class="note-tag">Pimienta rosa</span><span class="note-tag">Cardamomo</span></div>
+      </div>
+      <div class="note-group">
+        <div class="note-tag-label">Corazón</div>
+        <div class="note-tags"><span class="note-tag">Cedro</span><span class="note-tag">Ámbar gris</span><span class="note-tag">Incienso</span></div>
+      </div>
+      <div class="note-group">
+        <div class="note-tag-label">Fondo</div>
+        <div class="note-tags"><span class="note-tag">Vainilla</span><span class="note-tag">Tabaco</span><span class="note-tag">Almizcle</span></div>
+      </div>
+    </div>
+
+    <div class="buy-row">
+      <div class="qty"><button>−</button><span>1</span><button>+</button></div>
+      <button class="btn-gold" id="addToCartBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-13z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 2H2"/></svg>
+        Agregar al carrito
+      </button>
+    </div>
+    <div class="whatsapp-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold);"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.7 17L2 22l5.2-1.6a8.9 8.9 0 0 0 4.3 1.1h0A8.9 8.9 0 0 0 20.4 9a8.9 8.9 0 0 0-2.8-2.7ZM11.5 20a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.4 7.4 0 1 1 6.2 3.3Z"/></svg>
+      El pedido se confirma directo por WhatsApp al finalizar tu compra
+    </div>
+
+    <div class="accordion">
+      <div class="acc-item open">
+        <div class="acc-head"><span>Modo de aplicación</span><span class="plus">–</span></div>
+        <div class="acc-body">Aplica sobre puntos de pulso: muñecas, cuello y detrás de las orejas. Dura más sobre piel hidratada.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><span>Envío y entrega</span><span class="plus">+</span></div>
+        <div class="acc-body">Entregas en Bogotá y envíos a nivel nacional. Tiempos y costos se confirman por WhatsApp según tu ciudad.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><span>Autenticidad</span><span class="plus">+</span></div>
+        <div class="acc-body">Producto 100% original, sellado, con empaque de la casa perfumista.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/Js/producto.js"></script>
+
+</body>
+</html>

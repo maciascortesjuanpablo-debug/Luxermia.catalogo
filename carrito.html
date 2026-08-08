@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu selección — LuxeViaAromas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="home.html" class="brand">
+    <div class="seal"><span>LV</span></div>
+    <div class="brand-name"><span class="full">LUXEVIA AROMAS</span><span class="sub">MAISON DE PARFUM</span></div>
+  </a>
+  <div class="topbar-actions">
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar perfume...">
+    </div>
+    <a href="/home.html" class="back">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span class="label">Seguir explorando</span>
+    </a>
+  </div>
+</div>
+
+<div class="page-head">
+  <div class="eyebrow">Tu selección</div>
+  <h1>Antes de confirmar, revisa tu pedido</h1>
+  <p>Ajusta cantidades o retira lo que no quieras. Al finalizar, enviamos tu selección directo por WhatsApp para coordinar precio, pago y entrega.</p>
+</div>
+
+<div class="cart-wrap" id="cartWrap"></div>
+
+<div class="empty" id="emptyState">
+  <div class="disc">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8a7143" stroke-width="1.4"><path d="M6 6h15l-1.5 9h-13z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L4 2H2"/></svg>
+  </div>
+  <h2>Tu selección está vacía</h2>
+  <p>Aún no has agregado ninguna fragancia.</p>
+  <a href="/home.html" class="btn-ghost-link">Explorar el catálogo →</a>
+</div>
+
+<div class="note-field" id="noteField">
+  <label>¿Algo que quieras contarnos? (opcional)</label>
+  <textarea id="noteText" placeholder="Ej: para regalo, entrega en la tarde, prefiero tono más dulce..."></textarea>
+</div>
+
+<div class="checkout-bar" id="checkoutBar">
+  <div class="summary"><b id="itemCount">0</b> fragancias seleccionadas</div>
+  <button class="btn-gold" id="checkoutBtn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.7 17L2 22l5.2-1.6a8.9 8.9 0 0 0 4.3 1.1h0A8.9 8.9 0 0 0 20.4 9a8.9 8.9 0 0 0-2.8-2.7ZM11.5 20a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.4 7.4 0 1 1 6.2 3.3Z"/></svg>
+    Finalizar por WhatsApp
+  </button>
+</div>
+
+<script src="/Js/carrito.js"></script>
+
+</body>
+</html>

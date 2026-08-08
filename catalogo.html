@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo completo — LuxeViaAromas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a href="home.html" class="brand">
+    <div class="seal"><span>LV</span></div>
+    <div class="brand-name">
+      <span class="full">LUXEVIA AROMAS</span>
+      <span class="sub">MAISON DE PARFUM</span>
+    </div>
+  </a>
+  <nav class="pill-nav">
+    <a href="/catalogo.html" class="active">Catálogo</a>
+    <a href="/hombre.html">Hombre</a>
+    <a href="/mujer.html">Mujer</a>
+    <a href="/unisex.html">Unisex</a>
+  </nav>
+  <div class="topbar-actions">
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar perfume...">
+    </div>
+    <a href="/carrito.html" class="cart-pill">
+      <span class="dot">3</span> Carrito
+    </a>
+  </div>
+</div>
+
+<div class="page-head" style="padding:56px 6vw 0;">
+  <div class="eyebrow">Catálogo</div>
+  <h1 class="display" style="font-weight:400; font-size:clamp(30px,4vw,44px);">Todas nuestras fragancias</h1>
+  <p style="color:var(--muted); font-size:14px; margin-top:12px; max-width:460px; line-height:1.7;">Filtra por categoría o busca directamente el perfume que tienes en mente.</p>
+</div>
+
+<section class="catalog-section" id="catalogo">
+  <div class="filters">
+    <button class="chip active" data-filter="Todos">Todos</button>
+    <button class="chip" data-filter="Hombre">Hombre</button>
+    <button class="chip" data-filter="Mujer">Mujer</button>
+    <button class="chip" data-filter="Unisex">Unisex</button>
+    <button class="chip" data-filter="Amaderados">Amaderados</button>
+    <button class="chip" data-filter="Florales">Florales</button>
+  </div>
+
+  <div class="mosaic" id="catalogoMosaic"></div>
+  <p id="noResults" style="display:none; text-align:center; color:var(--muted); font-size:13.5px; padding:50px 0;">No encontramos fragancias que coincidan con tu búsqueda.</p>
+</section>
+
+<footer>
+  <div style="max-width:300px;">
+    <a href="home.html" class="brand">
+      <div class="seal"><span>LV</span></div>
+      <div class="brand-name"><span class="full">LUXEVIA AROMAS</span><span class="sub">MAISON DE PARFUM</span></div>
+    </a>
+    <p class="tag">Perfumería de autor. Cada fragancia, una historia distinta que se lleva puesta.</p>
+  </div>
+  <div class="foot-col"><h4>Catálogo</h4><a href="hombre.html">Para Él</a><a href="mujer.html">Para Ella</a><a href="unisex.html">Unisex</a></div>
+  <div class="foot-col"><h4>Contacto</h4><a href="#">WhatsApp pedidos</a><a href="#">Instagram</a><a href="#">Bogotá, Colombia</a></div>
+  <div class="copy">© 2026 LuxeViaAromas</div>
+</footer>
+
+<script src="/Js/producto.js"></script>
+<script src="/Js/catalogo.js"></script>
+<script src="/Js/catalogo-init.js"></script>
+
+</body>
+</html>
