@@ -1,5 +1,5 @@
 // Número del vendedor — reemplázalo por el número real con indicativo de país, sin + ni espacios
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "573142646178";
 
 const cartWrap = document.getElementById('cartWrap');
 const emptyState = document.getElementById('emptyState');
