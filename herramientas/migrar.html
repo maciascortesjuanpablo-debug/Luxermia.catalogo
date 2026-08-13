@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Migrar catálogo a Firebase — LuxeViaAromas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/catalogo.css">
+<style>
+  .migrate-box{ max-width:560px; margin:100px auto; padding:40px 6vw; text-align:center; }
+  .migrate-box h1{ font-family:'Cormorant Garamond', serif; font-weight:400; font-size:32px; }
+  .migrate-box p{ color:var(--muted); font-size:14px; margin-top:14px; line-height:1.7; }
+  #log{ margin-top:28px; text-align:left; background:var(--bg-panel); border-radius:20px; padding:20px 24px; font-size:12.5px; color:var(--muted); max-height:260px; overflow-y:auto; display:none; }
+  #log p{ margin:4px 0; color:var(--cream); }
+  #log p.ok{ color:#9fc79f; }
+  #log p.err{ color:#c98a8a; }
+</style>
+</head>
+<body>
+
+<div class="migrate-box">
+  <div class="seal" style="margin:0 auto 20px;"><span>LV</span></div>
+  <h1>Migrar catálogo a Firebase</h1>
+  <p>Esta página sube los 6 perfumes de <code>productos-seed.js</code> a tu base de datos Firestore. Solo necesitas hacerlo <strong>una vez</strong> — después edita el catálogo directo desde la consola de Firebase.</p>
+  <button class="btn-gold" id="migrateBtn" style="margin-top:26px;">Subir catálogo a Firestore</button>
+  <div id="log"></div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-config.js"></script>
+<script src="productos-seed.js"></script>
+<script>
+  const logEl = document.getElementById('log');
+  function log(msg, cls){
+    const p = document.createElement('p');
+    if(cls) p.className = cls;
+    p.textContent = msg;
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+
+  document.getElementById('migrateBtn').addEventListener('click', async () => {
+    log('Iniciando migración...');
+    let ok = 0, fail = 0;
+    for(const producto of PRODUCTOS){
+      const { id, ...data } = producto;
+      try{
+        await db.collection('productos').doc(String(id)).set(data);
+        log(`✔ ${data.name} subido correctamente`, 'ok');
+        ok++;
+      }catch(err){
+        log(`✘ Error subiendo ${data.name}: ${err.message}`, 'err');
+        fail++;
+      }
+    }
+    log(`Listo — ${ok} productos subidos, ${fail} con error.`, ok > 0 ? 'ok' : 'err');
+  });
+</script>
+
+</body>
+</html>

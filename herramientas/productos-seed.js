@@ -1,5 +1,6 @@
-// Catálogo de perfumes — fuente única de datos.
-// Para agregar un perfume nuevo, copia un objeto de este arreglo y cambia los valores.
+// Datos de partida para migrar UNA VEZ a Firestore (ver migrar.html). Después de migrar,
+// el catálogo ya no lee este archivo — la fuente real pasa a ser Firestore.
+// Lo dejamos como respaldo/referencia.
 // "featured: true" hace que aparezca en la selección destacada del home.
 const PRODUCTOS = [
   {

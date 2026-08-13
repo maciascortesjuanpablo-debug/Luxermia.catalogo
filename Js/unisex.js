@@ -1,12 +1,12 @@
 function matchesChip(p, filter){
-    if(filter === 'Todos') return true;
-    if(filter === 'Amaderados') return normalizeText(p.family).includes('amaderado');
-    if(filter === 'Florales') return normalizeText(p.family).includes('floral');
-    return true;
-  }
+  if(filter === 'Todos') return true;
+  if(filter === 'Amaderados') return normalizeText(p.family).includes('amaderado');
+  if(filter === 'Florales') return normalizeText(p.family).includes('floral');
+  return true;
+}
 
-  const baseList = PRODUCTOS.filter(p => p.gender === 'Unisex');
-
+fetchProductos().then(productos => {
+  const baseList = productos.filter(p => p.gender === 'Unisex');
   setupCatalogPage({
     containerEl: document.getElementById('catMosaic'),
     noResultsEl: document.getElementById('noResults'),
@@ -15,3 +15,4 @@ function matchesChip(p, filter){
     baseList: baseList,
     filterFn: matchesChip
   });
+});

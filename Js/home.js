@@ -1,4 +1,5 @@
-const destacados = PRODUCTOS.filter(p => p.featured);
+fetchProductos().then(productos => {
+  const destacados = productos.filter(p => p.featured);
   setupCatalogPage({
     containerEl: document.getElementById('destacadosMosaic'),
     noResultsEl: document.getElementById('noResults'),
@@ -7,3 +8,4 @@ const destacados = PRODUCTOS.filter(p => p.featured);
     baseList: destacados,
     filterFn: null
   });
+});

@@ -20,19 +20,19 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="searchInput" placeholder="Buscar perfume...">
     </div>
-    <a href="index.html" class="back">
+    <a href="catalogo.html" class="back">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       Volver al catálogo
     </a>
   </div>
 </div>
 
-<div class="crumb">Catálogo <span>/</span> Hombre <span>/</span> <span style="color:var(--gold);">Ambre Nocturne</span></div>
+<div class="crumb">Catálogo <span>/</span> <span id="crumbGender">...</span> <span>/</span> <span style="color:var(--gold);" id="crumbName">...</span></div>
 
-<div class="product">
+<div class="product" id="productWrap" style="display:none;">
   <div class="media-wrap">
     <div class="blob">
-      <div class="badge">En stock</div>
+      <div class="badge" id="stockBadge">En stock</div>
       <svg width="190" height="330" viewBox="0 0 180 320">
         <defs>
           <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
@@ -42,8 +42,8 @@
         <rect x="72" y="18" width="36" height="28" rx="6" fill="url(#bg2)"/>
         <rect x="80" y="4" width="20" height="20" rx="4" fill="#e8d6a0"/>
         <rect x="40" y="56" width="100" height="230" rx="30" fill="url(#bg2)"/>
-        <text x="90" y="160" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2">AMBRE</text>
-        <text x="90" y="178" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2">NOCTURNE</text>
+        <text x="90" y="160" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2" id="svgLine1"></text>
+        <text x="90" y="178" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#f3ead8" letter-spacing="2" id="svgLine2"></text>
         <text x="90" y="196" text-anchor="middle" font-family="Jost, sans-serif" font-size="7" fill="#c6a15b" letter-spacing="3">LUXEVIA AROMAS</text>
       </svg>
     </div>
@@ -52,31 +52,31 @@
 
   <div>
     <div class="badge-row">
-      <span class="gender-badge">Hombre</span>
-      <span class="fam">Amaderado especiado</span>
+      <span class="gender-badge" id="genderBadge">—</span>
+      <span class="fam" id="familyText">—</span>
     </div>
-    <h1>Ambre Nocturne</h1>
-    <div class="maison">Eau de Parfum · 100 ml</div>
+    <h1 id="productName">—</h1>
+    <div class="maison" id="maisonText">—</div>
 
     <div class="price-row">
-      <span class="stock">● En stock</span>
+      <span class="stock" id="stockText">● En stock</span>
     </div>
 
-    <p class="desc">Una fragancia envolvente que abre con especias cálidas y desciende hacia un corazón de cedro y ámbar gris, cerrando con un fondo profundo de vainilla y tabaco.</p>
+    <p class="desc" id="descText">—</p>
 
     <div class="notes-block">
       <div class="notes-title">Pirámide olfativa</div>
       <div class="note-group">
         <div class="note-tag-label">Salida</div>
-        <div class="note-tags"><span class="note-tag">Bergamota</span><span class="note-tag">Pimienta rosa</span><span class="note-tag">Cardamomo</span></div>
+        <div class="note-tags" id="notesSalida"></div>
       </div>
       <div class="note-group">
         <div class="note-tag-label">Corazón</div>
-        <div class="note-tags"><span class="note-tag">Cedro</span><span class="note-tag">Ámbar gris</span><span class="note-tag">Incienso</span></div>
+        <div class="note-tags" id="notesCorazon"></div>
       </div>
       <div class="note-group">
         <div class="note-tag-label">Fondo</div>
-        <div class="note-tags"><span class="note-tag">Vainilla</span><span class="note-tag">Tabaco</span><span class="note-tag">Almizcle</span></div>
+        <div class="note-tags" id="notesFondo"></div>
       </div>
     </div>
 
@@ -109,7 +109,20 @@
   </div>
 </div>
 
-<script src="/Js/producto.js"></script>
+<div id="loadingState" style="text-align:center; padding:100px 20px; color:var(--muted); font-size:14px;">Cargando perfume...</div>
+<div id="notFoundState" style="display:none; text-align:center; padding:100px 20px;">
+  <p style="font-family:'Cormorant Garamond', serif; font-size:26px;">No encontramos este perfume</p>
+  <p style="color:var(--muted); font-size:13.5px; margin-top:10px;">Puede que el enlace esté roto o el producto ya no exista.</p>
+  <a href="catalogo.html" class="link-ghost" style="display:inline-block; margin-top:20px;">Volver al catálogo →</a>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/data-service.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/producto.js"></script>
 
 </body>
 </html>
